@@ -9,88 +9,154 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var activePlayer = 1 //Cross default
-    var gameState = [0, 0, 0, 0 , 0, 0, 0, 0, 0, 0]
+    @IBOutlet weak var crossCounter: UILabel!
     
-    let gameWon = [[0, 1,2], [3, 4, 5], [6,7, 8], [0, 3, 6], [1, 4, 7], [2, 5 ,8], [0, 4, 8], [2, 4, 6]]
-    var isGameActive = true
-    
-
+    @IBOutlet weak var circleCounter: UILabel!
     
     @IBOutlet weak var winLabel: UILabel!
     
-    @IBAction func putIconAction(_ sender: AnyObject) {
-        if(gameState[sender.tag-1]) == 0 && isGameActive == true {
-            gameState[sender.tag-1] = activePlayer
-            if(activePlayer == 1) {
-                sender.setImage(UIImage(named: "Cross.png"), for: UIControl.State.normal)
-                activePlayer = 2
-            }else{
-                sender.setImage(UIImage(named: "Circle.png"), for: UIControl.State.normal)
-                activePlayer = 1
-            }
-        }
-        
-        for winningCombination in gameWon {
-            if gameState[winningCombination[0]] != 0 && gameState[winningCombination[0]] == gameState[winningCombination[1]] && gameState[winningCombination[1]] == gameState[winningCombination[2]] {
-                
-                isGameActive = false
-                
-                if gameState [winningCombination[0]] == 1 {
-                    //Cross has won
-                    winLabel.text = "Cross has won"
-                }else{
-                    //Circle has won
-                    winLabel.text = "Circle has won"
-                }
-                
-                playAgainButton.isHidden = false
-                winLabel.isHidden = false
-                
-            }
-            
-        }
-        var count = 1
-                
-        if isGameActive == true{
-            for i in gameState{
-                count = i*count
-            }
-            if count != 0 {
-                winLabel.text = "Draw"
-                winLabel.isHidden = false
-                playAgainButton.isHidden = false
-                    }
-                }
-            
-    }
+    var whoIsPlaying = 1 //default starter
+    var stateOfGame = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+    var isGameActive = true
     
-    @IBOutlet weak var playAgainButton: UIButton!
-    @IBAction func playAgain(_ sender: AnyObject) {
-        
-        gameState = [0, 0, 0, 0 , 0, 0, 0, 0, 0, 0]
-        isGameActive = true
-        activePlayer = 1
-        
-        playAgainButton.isHidden = true
-        winLabel.isHidden = true
-        
-        for i in 1...9 {
-            let button = view.viewWithTag(i) as! UIButton
-            button.setImage(nil, for: UIControl.State.normal)
-        }
-        
-        
-    }
-    
+    let combinationOfWin = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7],
+                            [2, 5, 8], [0, 4, 8], [2, 4 ,6]]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
+        
         // Do any additional setup after loading the view.
+        
+    }
+    
+    @IBAction func putCrossOrCircle(_ sender: UIButton) {
+        
+        if (stateOfGame[sender.tag-1] == 0 && isGameActive == true) {
+            
+            stateOfGame[sender.tag-1] = whoIsPlaying
+            
+            if (whoIsPlaying == 1) {
+                sender.setImage(UIImage(named: "Cross.png"), for: .normal)
+                whoIsPlaying = 2
+                
+            } else {
+                
+                sender.setImage(UIImage(named: "Circle.png"), for: .normal)
+                whoIsPlaying = 1
+                
+            }
+            
+            
+        }
+        callDraw()
+        whoIsWinner()
+        
+        
+    }
+    
+    
+    @IBAction func playAgainButton(_ sender: UIButton) {
+        
+        
+    }
+    
+    func declareWinner(winner: Int) {
+        
+        var crossCount = 0
+        var circleCount = 0
+        
+        if winner == 1 {
+            isGameActive = false
+            crossCount += 1
+            crossCounter.text = ("Cross: \(crossCount)")
+            winLabel.isHidden = false
+            winLabel.text = "Cross has won"
+        } else {
+            isGameActive = false
+            circleCount += 1
+            circleCounter.text = ("Circle: \(circleCount)")
+            winLabel.isHidden = false
+            winLabel.text = "Circle has won"
+        }
+    
+    }
+    
+    func callDraw() {
+        var count = 1
+    
+        
+        if isGameActive == true{
+            
+            for i in stateOfGame {
+                 count = i * count
+            }
+            if count != 0 {
+                isGameActive = false
+                winLabel.isHidden = false
+                winLabel.text = "Draw"
+            }
+                   
+               }
+        
+    }
+    
+    func whoIsWinner() {
+        
+        if stateOfGame[0] == stateOfGame[1] && stateOfGame[1] == stateOfGame[2] && stateOfGame[1] != 0 {
+            declareWinner(winner: stateOfGame[0])
+            
+        }
+        
+        if stateOfGame[3] == stateOfGame[4] && stateOfGame[4] == stateOfGame[5] && stateOfGame[4] != 0{
+            
+            declareWinner(winner: stateOfGame[3])
+            
+        }
+        
+        if stateOfGame[6] == stateOfGame[7] && stateOfGame[7] == stateOfGame[8] && stateOfGame[7] != 0 {
+            
+            declareWinner(winner: stateOfGame[6])
+            
+        }
+        
+        if stateOfGame[0] == stateOfGame[3] && stateOfGame[3] == stateOfGame[6] && stateOfGame[3] != 0 {
+            
+            declareWinner(winner: stateOfGame[0])
+        
+        
+        
+        if stateOfGame[1] == stateOfGame[4] && stateOfGame[4] == stateOfGame[7] && stateOfGame[4] != 0{
+            
+            declareWinner(winner: stateOfGame[1])
+        }
+        
+        if stateOfGame[2] == stateOfGame[5] && stateOfGame[5] == stateOfGame[8] && stateOfGame[5] != 0 {
+            
+            declareWinner(winner: stateOfGame[2])
+        }
+        
+        if stateOfGame[0] == stateOfGame[4] && stateOfGame[4] == stateOfGame[8] && stateOfGame[4] != 0 {
+            
+            declareWinner(winner: stateOfGame[0])
+        }
+        
+        if stateOfGame[2] == stateOfGame[4] && stateOfGame[4] == stateOfGame[6] && stateOfGame[4] != 0 {
+            
+            declareWinner(winner: stateOfGame[2])
+        }
+        
         
         }
     
     }
+}
+
+
+
+
+
 
