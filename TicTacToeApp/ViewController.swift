@@ -15,6 +15,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var winLabel: UILabel!
     
+    var crossCount = 0
+    var circleCount = 0
+    
     var whoIsPlaying = 1 //default starter
     var stateOfGame = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     var isGameActive = true
@@ -83,13 +86,11 @@ class ViewController: UIViewController {
     
     func declareWinner(winner: Int) {
         
-        var crossCount = 0
-        var circleCount = 0
-        
         if winner == 1 {
             isGameActive = false
             crossCount += 1
             crossCounter.text = ("Cross: \(crossCount)")
+            print("\(crossCount)")
             winLabel.isHidden = false
             winLabel.text = "Cross has won"
             playAgainButton.isHidden = false
