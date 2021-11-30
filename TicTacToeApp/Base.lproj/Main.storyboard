@@ -27,7 +27,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
-                                    <action selector="putCrossOrCircle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mfk-mx-TMo"/>
+                                    <action selector="putCrossOrCircle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dzN-8C-Sfm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfK-Vb-vrf">
@@ -36,16 +36,16 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
-                                    <action selector="putCrossOrCircle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W6j-BN-MeJ"/>
+                                    <action selector="putCrossOrCircle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jgQ-mt-tUd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GfC-lK-SRo">
-                                <rect key="frame" x="287" y="238" width="100" height="100"/>
+                                <rect key="frame" x="276" y="238" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
-                                    <action selector="putCrossOrCircle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Gz-5A-aNU"/>
+                                    <action selector="putCrossOrCircle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qRg-qf-fQ9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OEb-6s-VEc">
@@ -54,25 +54,25 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
-                                    <action selector="putCrossOrCircle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xay-8Z-hvg"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wjy-ln-ayE">
-                                <rect key="frame" x="287" y="357" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
-                                <connections>
-                                    <action selector="putCrossOrCircle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6KF-hU-Awd"/>
+                                    <action selector="putCrossOrCircle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="im9-nZ-YS4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqG-7X-OGC">
-                                <rect key="frame" x="157" y="357" width="100" height="100"/>
+                                <rect key="frame" x="157" y="358" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
-                                    <action selector="putCrossOrCircle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6MT-N3-t7s"/>
+                                    <action selector="putCrossOrCircle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="emZ-b4-u9U"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wjy-ln-ayE">
+                                <rect key="frame" x="276" y="358" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="putCrossOrCircle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N4b-xn-qE5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PwV-ev-O0L">
@@ -81,7 +81,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
-                                    <action selector="putCrossOrCircle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kiy-cu-vnD"/>
+                                    <action selector="putCrossOrCircle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NsL-E2-jpf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jls-s0-PlZ">
@@ -90,25 +90,17 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
-                                    <action selector="putCrossOrCircle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fyd-5N-gC2"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32m-j5-uuh">
-                                <rect key="frame" x="287" y="480" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
-                                <connections>
-                                    <action selector="putCrossOrCircle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rSl-8G-Rd8"/>
+                                    <action selector="putCrossOrCircle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xoJ-XW-4F0"/>
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQu-fU-6xY">
-                                <rect key="frame" x="112" y="72" width="236" height="48"/>
+                                <rect key="frame" x="109" y="69" width="213" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Cross has won">
                                         <attributes>
                                             <font key="NSFont" size="24" name="Copperplate-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -128,13 +120,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRb-Zy-I3W">
-                                <rect key="frame" x="163" y="758" width="90" height="31"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1t-3P-Xha">
+                                <rect key="frame" x="127" y="768" width="164" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="24"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Play Again">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="playAgain:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yUo-Kb-oyB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6g-qk-Vzr">
+                                <rect key="frame" x="276" y="480" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Play again"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
-                                    <action selector="playAgainButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xiu-k5-MJj"/>
+                                    <action selector="putCrossOrCircle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7te-gK-Smj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -145,6 +149,7 @@
                     <connections>
                         <outlet property="circleCounter" destination="guL-g9-RZ9" id="2rR-aX-Xki"/>
                         <outlet property="crossCounter" destination="MgA-lf-mDn" id="Ehg-Qr-bBy"/>
+                        <outlet property="playAgainButton" destination="J1t-3P-Xha" id="7ge-W2-IGs"/>
                         <outlet property="winLabel" destination="JQu-fU-6xY" id="4bm-la-155"/>
                     </connections>
                 </viewController>
@@ -155,6 +160,9 @@
     </scenes>
     <resources>
         <image name="TicTacToeGrid" width="1078" height="1068"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

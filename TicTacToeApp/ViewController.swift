@@ -35,6 +35,7 @@ class ViewController: UIViewController {
     
     @IBAction func putCrossOrCircle(_ sender: UIButton) {
         
+        
         if (stateOfGame[sender.tag-1] == 0 && isGameActive == true) {
             
             stateOfGame[sender.tag-1] = whoIsPlaying
@@ -52,17 +53,33 @@ class ViewController: UIViewController {
             
             
         }
-        callDraw()
+        print("\(stateOfGame)")
+        
         whoIsWinner()
+        callDraw()
         
         
     }
     
     
-    @IBAction func playAgainButton(_ sender: UIButton) {
+    @IBOutlet weak var playAgainButton: UIButton!
+    @IBAction func playAgain(_ sender: UIButton) {
+        stateOfGame = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+        isGameActive = true
+        whoIsPlaying = 1
+        
+        playAgainButton.isHidden = true
+        winLabel.isHidden = true
+        
+        for i in 1...9 {
+            let button = view.viewWithTag(i) as? UIButton
+            button?.setImage(UIImage(named: "emptyImage.png"), for: .normal)
+            }
+    
         
         
     }
+    
     
     func declareWinner(winner: Int) {
         
@@ -75,12 +92,14 @@ class ViewController: UIViewController {
             crossCounter.text = ("Cross: \(crossCount)")
             winLabel.isHidden = false
             winLabel.text = "Cross has won"
+            playAgainButton.isHidden = false
         } else {
             isGameActive = false
             circleCount += 1
             circleCounter.text = ("Circle: \(circleCount)")
             winLabel.isHidden = false
             winLabel.text = "Circle has won"
+            playAgainButton.isHidden = false
         }
     
     }
@@ -106,45 +125,45 @@ class ViewController: UIViewController {
     
     func whoIsWinner() {
         
-        if stateOfGame[0] == stateOfGame[1] && stateOfGame[1] == stateOfGame[2] && stateOfGame[1] != 0 {
+        if stateOfGame[0] == stateOfGame[1] && stateOfGame[0] == stateOfGame[2] && stateOfGame[0] != 0 {
             declareWinner(winner: stateOfGame[0])
             
         }
         
-        if stateOfGame[3] == stateOfGame[4] && stateOfGame[4] == stateOfGame[5] && stateOfGame[4] != 0{
+        if stateOfGame[3] == stateOfGame[4] && stateOfGame[3] == stateOfGame[5] && stateOfGame[3] != 0{
             
             declareWinner(winner: stateOfGame[3])
             
         }
         
-        if stateOfGame[6] == stateOfGame[7] && stateOfGame[7] == stateOfGame[8] && stateOfGame[7] != 0 {
+        if stateOfGame[6] == stateOfGame[7] && stateOfGame[6] == stateOfGame[8] && stateOfGame[6] != 0 {
             
             declareWinner(winner: stateOfGame[6])
             
         }
         
-        if stateOfGame[0] == stateOfGame[3] && stateOfGame[3] == stateOfGame[6] && stateOfGame[3] != 0 {
+        if stateOfGame[0] == stateOfGame[3] && stateOfGame[0] == stateOfGame[6] && stateOfGame[0] != 0 {
             
             declareWinner(winner: stateOfGame[0])
+            
+        }
         
-        
-        
-        if stateOfGame[1] == stateOfGame[4] && stateOfGame[4] == stateOfGame[7] && stateOfGame[4] != 0{
+        if stateOfGame[1] == stateOfGame[4] && stateOfGame[1] == stateOfGame[7] && stateOfGame[1] != 0{
             
             declareWinner(winner: stateOfGame[1])
         }
         
-        if stateOfGame[2] == stateOfGame[5] && stateOfGame[5] == stateOfGame[8] && stateOfGame[5] != 0 {
+        if stateOfGame[2] == stateOfGame[5] && stateOfGame[2] == stateOfGame[8] && stateOfGame[2] != 0 {
             
             declareWinner(winner: stateOfGame[2])
         }
         
-        if stateOfGame[0] == stateOfGame[4] && stateOfGame[4] == stateOfGame[8] && stateOfGame[4] != 0 {
+        if stateOfGame[0] == stateOfGame[4] && stateOfGame[0] == stateOfGame[8] && stateOfGame[0] != 0 {
             
             declareWinner(winner: stateOfGame[0])
         }
         
-        if stateOfGame[2] == stateOfGame[4] && stateOfGame[4] == stateOfGame[6] && stateOfGame[4] != 0 {
+        if stateOfGame[2] == stateOfGame[4] && stateOfGame[2] == stateOfGame[6] && stateOfGame[2] != 0 {
             
             declareWinner(winner: stateOfGame[2])
         }
@@ -153,7 +172,7 @@ class ViewController: UIViewController {
         }
     
     }
-}
+
 
 
 
