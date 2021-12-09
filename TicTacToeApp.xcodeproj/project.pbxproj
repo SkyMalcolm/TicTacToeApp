@@ -16,7 +16,7 @@
 		91828C0A274D10E20035EBC2 /* TicTacToeAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91828C09274D10E20035EBC2 /* TicTacToeAppTests.swift */; };
 		91828C14274D10E20035EBC2 /* TicTacToeAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91828C13274D10E20035EBC2 /* TicTacToeAppUITests.swift */; };
 		91828C16274D10E20035EBC2 /* TicTacToeAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91828C15274D10E20035EBC2 /* TicTacToeAppUITestsLaunchTests.swift */; };
-		91828CA32758FE080035EBC2 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91828CA22758FE050035EBC2 /* GameLogic.swift */; };
+		91828CA32758FE080035EBC2 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91828CA22758FE050035EBC2 /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +50,7 @@
 		91828C0F274D10E20035EBC2 /* TicTacToeAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TicTacToeAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91828C13274D10E20035EBC2 /* TicTacToeAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeAppUITests.swift; sourceTree = "<group>"; };
 		91828C15274D10E20035EBC2 /* TicTacToeAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		91828CA22758FE050035EBC2 /* GameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
+		91828CA22758FE050035EBC2 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +104,7 @@
 				91828BF2274D10DA0035EBC2 /* AppDelegate.swift */,
 				91828BF4274D10DA0035EBC2 /* SceneDelegate.swift */,
 				91828BF6274D10DA0035EBC2 /* ViewController.swift */,
-				91828CA22758FE050035EBC2 /* GameLogic.swift */,
+				91828CA22758FE050035EBC2 /* Game.swift */,
 				91828BF8274D10DA0035EBC2 /* Main.storyboard */,
 				91828BFB274D10E10035EBC2 /* Assets.xcassets */,
 				91828BFD274D10E10035EBC2 /* LaunchScreen.storyboard */,
@@ -274,7 +274,7 @@
 			files = (
 				91828BF7274D10DA0035EBC2 /* ViewController.swift in Sources */,
 				91828BF3274D10DA0035EBC2 /* AppDelegate.swift in Sources */,
-				91828CA32758FE080035EBC2 /* GameLogic.swift in Sources */,
+				91828CA32758FE080035EBC2 /* Game.swift in Sources */,
 				91828BF5274D10DA0035EBC2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

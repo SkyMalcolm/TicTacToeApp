@@ -8,81 +8,92 @@
 import Foundation
 import UIKit
 
-class GameLogic {
+class Game {
     
-    var stateOfGame = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+    private var stateOfGame = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     var isGameActive = true
     
     func changeStateOfGame(place: Int, marker: Int) -> Bool {
         
         var success = false
         
-        if stateOfGame[place] == 0 {
-        
+        if stateOfGame[place] == 0 && isGameActive == true {
+            
             success = true
             
-        stateOfGame[place] = marker
-        
-        print(stateOfGame)
-        
+            stateOfGame[place] = marker
+            
+            print(stateOfGame)
+            
         } else {
             
-         success = false
+            success = false
             
         }
         return success
     }
     
-    func whoIsWinner() -> Int {
+    func decideWinner() -> Int {
         //checking if combination are equal to eachother
         
         var whoIsWinner = 0
         
         if stateOfGame[0] == stateOfGame[1] && stateOfGame[0] == stateOfGame[2] && stateOfGame[0] != 0 {
+            isGameActive = false
             whoIsWinner = stateOfGame[0]
+            
             
         }
         
         if stateOfGame[3] == stateOfGame[4] && stateOfGame[3] == stateOfGame[5] && stateOfGame[3] != 0{
+            isGameActive = false
             whoIsWinner = stateOfGame[3]
+            
             
         }
         
         if stateOfGame[6] == stateOfGame[7] && stateOfGame[6] == stateOfGame[8] && stateOfGame[6] != 0 {
-            
+            isGameActive = false
             whoIsWinner = stateOfGame[6]
+            
             
         }
         
         if stateOfGame[0] == stateOfGame[3] && stateOfGame[0] == stateOfGame[6] && stateOfGame[0] != 0 {
-            
+            isGameActive = false
             whoIsWinner = stateOfGame[0]
+            
             
         }
         
         if stateOfGame[1] == stateOfGame[4] && stateOfGame[1] == stateOfGame[7] && stateOfGame[1] != 0{
+            isGameActive = false
             
             whoIsWinner = stateOfGame[1]
-
+            
+            
         }
         
         if stateOfGame[2] == stateOfGame[5] && stateOfGame[2] == stateOfGame[8] && stateOfGame[2] != 0 {
-            
+            isGameActive = false
             whoIsWinner = stateOfGame[2]
-        
+            
+            
         }
         
         if stateOfGame[0] == stateOfGame[4] && stateOfGame[0] == stateOfGame[8] && stateOfGame[0] != 0 {
-            
+            isGameActive = false
             whoIsWinner = stateOfGame[0]
+            
         }
         
         if stateOfGame[2] == stateOfGame[4] && stateOfGame[2] == stateOfGame[6] && stateOfGame[2] != 0 {
             
+            isGameActive = false
+            
             whoIsWinner = stateOfGame[2]
             
         }
-        
         return whoIsWinner
         
     }
@@ -94,7 +105,7 @@ class GameLogic {
         if isGameActive == true{
             
             for i in stateOfGame {
-                 count = i * count
+                count = i * count
             }
             if count != 0 {
                 isGameActive = false
@@ -102,7 +113,7 @@ class GameLogic {
             } else {
                 isDraw = false
             }
-                   
+            
         }
         return isDraw
     }
@@ -111,13 +122,7 @@ class GameLogic {
         stateOfGame = [0, 0, 0, 0, 0, 0, 0, 0, 0]
         isGameActive = true
         
-        
-        
     }
-    
-    
-    
-    
     
     
     

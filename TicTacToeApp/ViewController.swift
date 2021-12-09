@@ -15,93 +15,102 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var winLabel: UILabel!
     
+    @IBOutlet weak var turnLabel: UILabel!
+    
+    @IBOutlet weak var playAgainButton: UIButton!
+    
     var crossCount = 0
     var circleCount = 0
     var whoIsPlaying = 1
     
-    let gameLogic = GameLogic()
+    let game = Game()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
+        turnLabel.text = "X"
         
         // Do any additional setup after loading the view.
         
     }
     
     @IBAction func putCrossOrCircle(_ sender: UIButton) {
-            
-            if gameLogic.changeStateOfGame(place: sender.tag-1, marker: whoIsPlaying) {
-                switch whoIsPlaying {
-                case 1:
-                    sender.setImage(UIImage(named: "Cross.png"), for: .normal)
-                    whoIsPlaying = 2
+        
+        let placeMarker = game.changeStateOfGame(place: sender.tag-1, marker: whoIsPlaying)
+        
+        if placeMarker {
+            switch whoIsPlaying {
+            case 1:
+                turnLabel.text = "O"
+                sender.setImage(UIImage(named: "Cross.png"), for: .normal)
+                whoIsPlaying = 2
                 
-                case 2:
-                    sender.setImage(UIImage(named: "Circle.png"), for: .normal)
-                    whoIsPlaying = 1
-                default:
-                    return
+            case 2:
+                turnLabel.text = "X"
+                sender.setImage(UIImage(named: "Circle.png"), for: .normal)
+                whoIsPlaying = 1
+            default:
+                return
                 
             }
             
-        
+            declareWinner(winner: game.decideWinner())
+            declareDraw(isDraw: game.callDraw())
         }
         
-        declareWinner(winner: gameLogic.whoIsWinner(), isDraw: gameLogic.callDraw())
+        
     }
     
-    
-    @IBOutlet weak var playAgainButton: UIButton!
     @IBAction func playAgain(_ sender: UIButton) {
-
-        gameLogic.resetGame()
+        
+        game.resetGame()
+        whoIsPlaying = 1
         
         playAgainButton.isHidden = true
         winLabel.isHidden = true
+        turnLabel.text = "X"
+        turnLabel.isHidden = false
         
         for i in 1...9 {
-            if let button = view.viewWithTag(i) as? UIButton {
-            button.setImage(UIImage(named: "emptyImage.png"), for: .normal)
-       }
+            if let reset = view.viewWithTag(i) as? UIButton {
+                reset.setImage(UIImage(named: "emptyImage.png"), for: .normal)
+            }
             
+        }
+        
     }
     
-}
     
-    
-    func declareWinner(winner: Int, isDraw: Bool) {
+    func declareWinner(winner: Int) {
         
         if winner == 1 {
-            whoIsPlaying = 3
             crossCount += 1
             crossCounter.text = ("Cross: \(crossCount)")
-            print("\(crossCount)")
+            print("crosscount: \(crossCount)")
+            turnLabel.isHidden = true
             winLabel.isHidden = false
             winLabel.text = "Cross has won"
             playAgainButton.isHidden = false
         } else if winner == 2 {
-            whoIsPlaying = 3
             circleCount += 1
             circleCounter.text = ("Circle: \(circleCount)")
+            turnLabel.isHidden = true
             winLabel.isHidden = false
             winLabel.text = "Circle has won"
             playAgainButton.isHidden = false
         }
         
+    }
+    
+    func declareDraw(isDraw: Bool) {
+        
         if isDraw {
+            turnLabel.isHidden = true
             winLabel.isHidden = false
             playAgainButton.isHidden = false
             winLabel.text = "Draw"
         }
-    
     }
-    
-
-    
-    
     
 }
 
