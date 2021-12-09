@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         
         crossCounter.text = ("\(nameOne ?? ""): 0")
         circleCounter.text = ("\(nameTwo ?? ""): 0")
-    
+        
         turnLabel.text = nameOne
         
         // Do any additional setup after loading the view.
@@ -65,10 +65,7 @@ class ViewController: UIViewController {
             declareWinner(winner: game.decideWinner())
             declareDraw(isDraw: game.callDraw())
             
-            
-            
         }
-        
         
     }
     
@@ -91,20 +88,18 @@ class ViewController: UIViewController {
         
     }
     
-    
     func declareWinner(winner: Int) {
         
         if winner == 1 {
             crossCount += 1
             crossCounter.text = ("\(nameOne ?? ""): \(crossCount)")
-            print("crosscount: \(crossCount)")
             turnLabel.isHidden = true
             winLabel.isHidden = false
             winLabel.text = ("\(nameOne ?? "") has won")
             playAgainButton.isHidden = false
         } else if winner == 2 {
             circleCount += 1
-            circleCounter.text = ("\(nameTwo ?? ""): \(circleCount)")//("Circle: \(circleCount)")
+            circleCounter.text = ("\(nameTwo ?? ""): \(circleCount)")
             turnLabel.isHidden = true
             winLabel.isHidden = false
             winLabel.text = ("\(nameTwo ?? "") has won")
