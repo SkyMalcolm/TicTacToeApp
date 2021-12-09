@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         crossCounter.text = ("\(nameOne ?? ""): 0")
         circleCounter.text = ("\(nameTwo ?? ""): 0")
         
-        turnLabel.text = nameOne
+        turnLabel.text = ("\(nameOne ?? "") start!")
         
         // Do any additional setup after loading the view.
         
@@ -49,12 +49,12 @@ class ViewController: UIViewController {
         if placeMarker {
             switch whoIsPlaying {
             case 1:
-                turnLabel.text = nameTwo
+                turnLabel.text = ("\(nameTwo ?? "") your turn")
                 sender.setImage(UIImage(named: "Cross.png"), for: .normal)
                 whoIsPlaying = 2
                 
             case 2:
-                turnLabel.text = nameOne
+                turnLabel.text = ("\(nameOne ?? "") your turn")
                 sender.setImage(UIImage(named: "Circle.png"), for: .normal)
                 whoIsPlaying = 1
             default:
@@ -76,7 +76,7 @@ class ViewController: UIViewController {
         
         playAgainButton.isHidden = true
         winLabel.isHidden = true
-        turnLabel.text = (nameOne)
+        turnLabel.text = ("\(nameOne ?? "") start!")
         turnLabel.isHidden = false
         
         for i in 1...9 {
@@ -95,14 +95,14 @@ class ViewController: UIViewController {
             crossCounter.text = ("\(nameOne ?? ""): \(crossCount)")
             turnLabel.isHidden = true
             winLabel.isHidden = false
-            winLabel.text = ("\(nameOne ?? "") has won")
+            winLabel.text = ("\(nameOne ?? "") won")
             playAgainButton.isHidden = false
         } else if winner == 2 {
             circleCount += 1
             circleCounter.text = ("\(nameTwo ?? ""): \(circleCount)")
             turnLabel.isHidden = true
             winLabel.isHidden = false
-            winLabel.text = ("\(nameTwo ?? "") has won")
+            winLabel.text = ("\(nameTwo ?? "") won")
             playAgainButton.isHidden = false
         }
         
