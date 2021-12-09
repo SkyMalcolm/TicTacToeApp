@@ -23,13 +23,19 @@ class ViewController: UIViewController {
     var circleCount = 0
     var whoIsPlaying = 1
     
+    var nameOne: String?
+    var nameTwo: String?
+    
     let game = Game()
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        turnLabel.text = "X"
+        crossCounter.text = ("\(nameOne ?? ""): 0")
+        circleCounter.text = ("\(nameTwo ?? ""): 0")
+    
+        turnLabel.text = nameOne
         
         // Do any additional setup after loading the view.
         
@@ -43,12 +49,12 @@ class ViewController: UIViewController {
         if placeMarker {
             switch whoIsPlaying {
             case 1:
-                turnLabel.text = "O"
+                turnLabel.text = nameTwo
                 sender.setImage(UIImage(named: "Cross.png"), for: .normal)
                 whoIsPlaying = 2
                 
             case 2:
-                turnLabel.text = "X"
+                turnLabel.text = nameOne
                 sender.setImage(UIImage(named: "Circle.png"), for: .normal)
                 whoIsPlaying = 1
             default:
@@ -60,7 +66,7 @@ class ViewController: UIViewController {
             declareDraw(isDraw: game.callDraw())
             
             
-    
+            
         }
         
         
@@ -73,7 +79,7 @@ class ViewController: UIViewController {
         
         playAgainButton.isHidden = true
         winLabel.isHidden = true
-        turnLabel.text = "X"
+        turnLabel.text = (nameOne)
         turnLabel.isHidden = false
         
         for i in 1...9 {
@@ -90,18 +96,18 @@ class ViewController: UIViewController {
         
         if winner == 1 {
             crossCount += 1
-            crossCounter.text = ("Cross: \(crossCount)")
+            crossCounter.text = ("\(nameOne ?? ""): \(crossCount)")
             print("crosscount: \(crossCount)")
             turnLabel.isHidden = true
             winLabel.isHidden = false
-            winLabel.text = "Cross has won"
+            winLabel.text = ("\(nameOne ?? "") has won")
             playAgainButton.isHidden = false
         } else if winner == 2 {
             circleCount += 1
-            circleCounter.text = ("Circle: \(circleCount)")
+            circleCounter.text = ("\(nameTwo ?? ""): \(circleCount)")//("Circle: \(circleCount)")
             turnLabel.isHidden = true
             winLabel.isHidden = false
-            winLabel.text = "Circle has won"
+            winLabel.text = ("\(nameTwo ?? "") has won")
             playAgainButton.isHidden = false
         }
         
