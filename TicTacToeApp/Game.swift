@@ -13,7 +13,8 @@ class Game {
     private var stateOfGame = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     var isGameActive = true
     
-    func changeStateOfGame(place: Int, marker: Int) -> Bool {
+    func changeStateOfGame(place: Int, marker: Int) -> Bool { //checking if place is empty
+        //and change state of game to 1 or 2
         
         var success = false
         
@@ -34,7 +35,7 @@ class Game {
     }
     
     func decideWinner() -> Int {
-        //checking if combination are equal to eachother
+        //checking if combination are equal to eachother, whoIsWinner will be 1 or 2
         
         var whoIsWinner = 0
         
@@ -98,7 +99,9 @@ class Game {
         
     }
     
-    func callDraw() -> Bool {
+    func callDraw() -> Bool { //checking if draw conditions are true or false
+        //if every spot in the array is taken by a 1 or a 2
+        
         var count = 1
         var isDraw = false
         

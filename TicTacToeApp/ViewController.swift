@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     var whoIsPlaying = 1
     
     let game = Game()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
     }
+    
     
     @IBAction func putCrossOrCircle(_ sender: UIButton) {
         
@@ -56,6 +58,9 @@ class ViewController: UIViewController {
             
             declareWinner(winner: game.decideWinner())
             declareDraw(isDraw: game.callDraw())
+            
+            
+    
         }
         
         
