@@ -24,8 +24,6 @@ class Game {
             
             stateOfGame[place] = marker
             
-            print(stateOfGame)
-            
         } else {
             
             success = false
