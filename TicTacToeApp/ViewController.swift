@@ -46,7 +46,7 @@ class ViewController: UIViewController {
         
         let placeMarker = game.changeStateOfGame(place: sender.tag-1, marker: whoIsPlaying)
         
-        if placeMarker {
+            if placeMarker {
             switch whoIsPlaying {
             case 1:
                 turnLabel.text = ("\(nameTwo ?? "") your turn")
@@ -63,6 +63,7 @@ class ViewController: UIViewController {
             }
             
             declareWinner(winner: game.decideWinner())
+                
             declareDraw(isDraw: game.callDraw())
             
         }
@@ -88,7 +89,7 @@ class ViewController: UIViewController {
         
     }
     
-    func declareWinner(winner: Int) {
+    func declareWinner(winner: Int) { // checks if winner: Int is a 1 or 2
         
         if winner == 1 {
             crossCount += 1
@@ -108,9 +109,9 @@ class ViewController: UIViewController {
         
     }
     
-    func declareDraw(isDraw: Bool) {
+    func declareDraw(isDraw: Bool) { // if isDraw is true, execute
         
-        if isDraw {
+            if isDraw {
             turnLabel.isHidden = true
             winLabel.isHidden = false
             playAgainButton.isHidden = false

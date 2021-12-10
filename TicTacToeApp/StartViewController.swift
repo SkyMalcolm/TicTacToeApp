@@ -28,9 +28,13 @@ class StartViewController: UIViewController {
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "goToGame" {
-            if playerOneName.text!.isEmpty && playerTwoName.text!.isEmpty {
+            if playerOneName.text!.isEmpty {
                 return false
             }
+            if playerTwoName.text!.isEmpty {
+                return false
+            }
+            return true
         }
         
         return true

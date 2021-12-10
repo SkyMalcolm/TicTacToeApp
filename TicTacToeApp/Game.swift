@@ -33,7 +33,7 @@ class Game {
     }
     
     func decideWinner() -> Int {
-        //checking if combination are equal to eachother, whoIsWinner will be 1 or 2
+        //checking if combination are equal to eachother
         
         var whoIsWinner = 0
         
@@ -98,7 +98,7 @@ class Game {
     }
     
     func callDraw() -> Bool { //checking if draw conditions are true or false
-        //if every spot in the array is taken by a 1 or a 2
+        //if every spot in the array is taken
         
         var count = 1
         var isDraw = false
